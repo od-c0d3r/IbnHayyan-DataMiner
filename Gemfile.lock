@@ -40,8 +40,13 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  diff-lcs (= 1.4.4)
   nokogiri
-  rspec
+  rspec (= 3.10.0)
+  rspec-core (= 3.10.0)
+  rspec-expectations (= 3.10.0)
+  rspec-mocks (= 3.10.0)
+  rspec-support (= 3.10.0)
   rubocop (~> 0.81.0)
 
 BUNDLED WITH
