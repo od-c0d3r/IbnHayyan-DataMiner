@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require '../lib/commands'
+require_relative '../lib/commands'
 
 describe Commands do
   let(:cmd) { Commands.new }

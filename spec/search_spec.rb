@@ -1,2 +1,2 @@
-require '../lib/commands'
-require '../lib/search'
+require_relative '../lib/commands'
+require_relative '../lib/search'
