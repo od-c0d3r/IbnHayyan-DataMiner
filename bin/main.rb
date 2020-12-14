@@ -39,6 +39,7 @@ end
 # Fetch and parse HTML document
 new_search = Search.new(usr_input.to_s)
 search_xml = new_search.create_xml
+p search_xml.class
 puts new_search.results_counter(search_xml)
 new_search.analyze_resultes(search_xml)
 
