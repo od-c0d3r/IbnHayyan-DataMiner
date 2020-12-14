@@ -1,5 +1,4 @@
-require 'nokogiri'
-require 'open-uri'
+require './lib/search'
 
 # welcome screen
 puts "
@@ -20,37 +19,38 @@ puts "
             |  /                            /.
             \\_/____________________________/.
 "
-
+puts "\n                           Made by \n                    githun.com/od-c0d3r  "
+print "      A web data mining tool for pdf files extension \n       crafted with Nokogiri (鋸) RubyGem and Ruby."
+puts ''
 # Terms of use "you must have the legal right to download the content you are accessing through our servers"
-puts "\n                Terms of use  "
-print " You must have the legal right to download\nthe content you are accessing through my App. ↲ "
+puts "\n                        Terms of use  "
+print "     You must have the legal right to download the \n       content you are accessing through my App. ↲ "
 gets.chomp
 puts ''
 
 # asking user for search input and maximum row per page
-print 'Enter Your Search : '
+print 'Search for : '
 usr_input = gets.chomp.strip
-
-# Fetch and parse HTML document
-src = "https://www.pdfdrive.com/search?q=#{usr_input}&pagecount=&pubyear=&searchin=&em="
-home_src = Nokogiri::HTML(URI.open(src))
-
-# searching and displaying the results
-puts home_src.css('div #result-found')[0].content.strip # Search result conter
-link_num = [nil]
-
-home_src.css('div.file-right').each_with_index do |link, index|
-  puts ''
-  puts "object - #{link}"
-  puts ''
-  puts "object index - #{index + 1}"
-  puts "object title - #{link.at_css('h2').content}"
-  puts "object info - #{link.at_css('div.file-info').content.strip}"
-  puts "object link - #{src.match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + link.at_css('a')['href']}"
-  link_num << (src.match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + link.at_css('a')['href']).to_s
-  puts ''
+until usr_input.match(/[0-9a-zA-Z]/)
+  print 'Invalid:> Search for : '
+  usr_input = gets.chomp.strip
 end
 
-print 'Type Link index then press Enter : '
+# Fetch and parse HTML document
+new_search = Search.new(usr_input.to_s)
+search_xml = new_search.create_xml
+puts new_search.results_counter(search_xml)
+new_search.analyze_resultes(search_xml)
+
+print 'Enter index to open in the default browser : '
 user_input = gets.chomp.strip
-system("start #{link_num[user_input.to_i]}")
+while user_input.to_i > 20 || user_input.to_i < 1
+  print 'Invalid:> Enter index to open in the default browser : '
+  user_input = gets.chomp.strip
+end
+
+if new_search.windows?
+  system("start #{new_search.results_links[user_input.to_i]}")
+else
+  system("sensible-browser #{new_search.results_links[user_input.to_i]}")
+end
