@@ -1,5 +1,5 @@
 class Search
-    def initiate(query)
-        @query = query
-    end
+  def initiate(query)
+    @query = query
+  end
 end
