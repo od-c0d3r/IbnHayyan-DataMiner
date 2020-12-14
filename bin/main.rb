@@ -22,6 +22,10 @@ puts "
 "
 
 # Terms of use "you must have the legal right to download the content you are accessing through our servers"
+puts "\n                Terms of use  "
+print " You must have the legal right to download\nthe content you are accessing through my App. ↲ "
+gets.chomp
+puts ''
 
 # asking user for search input and maximum row per page
 print 'Enter Your Search : '
