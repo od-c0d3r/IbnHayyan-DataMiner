@@ -1,12 +1,12 @@
 require_relative './commands'
 
 class Search
-  attr_reader :results_links
   @@links = [nil]
+  attr_reader :results_links
 
   def initialize(query)
     @query = query
-    @repository = ["https://www.pdfdrive.com/search?q=#{@query}&pagecount=&pubyear=&searchin=&em="] # add more sources here
+    @repository = ["https://www.pdfdrive.com/search?q=#{@query}&pagecount=&pubyear=&searchin=&em="]
     @cmd = Commands.new
     @results_links = [nil]
   end
@@ -26,10 +26,12 @@ class Search
       puts "object index - #{index + 1}"
       puts "object title - #{data.at_css('h2').content}"
       puts "object info - #{data.at_css('div.file-info').content.strip}"
-      puts "object link - #{@repository[0].match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + data.at_css('a')['href']}"
-      @results_links << (@repository[0].match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + data.at_css('a')['href']).to_s
+      pdf_link = @repository[0].match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + data.at_css('a')['href']
+      puts "object link - #{pdf_link}"
+      @results_links << pdf_link.to_s
       puts ''
     end
+    @@links << @results_links
   end
 end
 
