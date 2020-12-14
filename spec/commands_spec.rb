@@ -7,7 +7,7 @@ describe Commands do
 
   describe '#create_nokogiri(source)' do
     it 'Return Xml file string' do
-      new_xml = cmd.create_nokogiri("https://www.yahoo.com")
+      new_xml = cmd.create_nokogiri('https://www.yahoo.com')
       expect(new_xml).to be_a Nokogiri::HTML::Document
     end
   end
