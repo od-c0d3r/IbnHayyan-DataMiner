@@ -19,11 +19,13 @@ class Search
   end
 
   def analyze_resultes(xml_page)
-    results_array = []
+    results_array = ["\n"]
     xml_page.css('div.file-right').each_with_index do |data, index|
       pdf_link = @repository[0].match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + data.at_css('a')['href']
       @results_links << pdf_link.to_s
-      results_array << "\nFile index - #{index + 1}\nFile title - #{data.at_css('h2').content}\nFile info - #{data.at_css('div.file-info').content.strip}\n"
+      printable = "File index - #{index + 1}\nFile title - #{data.at_css('h2').content}\n" \
+                  "File info - #{data.at_css('div.file-info').content.strip}"
+      results_array << printable
       results_array << "\n"
     end
     results_array

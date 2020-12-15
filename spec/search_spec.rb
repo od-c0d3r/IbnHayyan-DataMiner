@@ -1,5 +1,7 @@
+# rubocop:disable Style/MutableConstant
 require_relative '../lib/commands'
 require_relative '../lib/search'
+RUBY_PLATFORM = 'x64-mingw32'
 
 describe Search do
   let(:search) { Search.new('harry potter') }
@@ -34,8 +36,6 @@ describe Search do
   end
 
   describe '#windows?' do
-    RUBY_PLATFORM = 'x64-mingw32'
-
     it 'Return true if user OS is windows' do
       expect(search.windows?).to be true
     end
@@ -45,3 +45,5 @@ describe Search do
     end
   end
 end
+
+# rubocop:enable Style/MutableConstant
