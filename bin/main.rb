@@ -4,7 +4,7 @@ require_relative '../lib/search'
 puts "
           ______________________________
         /  \\                            \\.
-        |   |                            |.
+        |   |            v1.0            |.
         \\__ |                            |.
             |                            |.
     ▀█▀ █▀▀▄ █▀▀▄ 　 ▒█░▒█ █▀▀█ █░░█ █░░█ █▀▀█ █▀▀▄ 　
@@ -19,7 +19,7 @@ puts "
             |  /                            /.
             \\_/____________________________/.
 "
-puts "\n                           Made by \n                    github.com/od-c0d3r  "
+puts "\n                           Made by \n                https://github.com/od-c0d3r  "
 print "      A web data mining tool for pdf files extension \n       crafted with Nokogiri (鋸) RubyGem and Ruby."
 puts ''
 
