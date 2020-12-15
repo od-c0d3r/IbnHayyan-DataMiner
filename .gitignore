@@ -10,6 +10,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+.respec_failures
 
 # Used by dotenv library to load environment variables.
 # .env
