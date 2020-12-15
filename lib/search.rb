@@ -19,19 +19,14 @@ class Search
   end
 
   def analyze_resultes(xml_page)
+    results_array = []
     xml_page.css('div.file-right').each_with_index do |data, index|
-      puts ''
-      puts "File index - #{index + 1}"
-      puts "File title - #{data.at_css('h2').content}"
-      puts "File info - #{data.at_css('div.file-info').content.strip}"
       pdf_link = @repository[0].match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + data.at_css('a')['href']
       @results_links << pdf_link.to_s
-      puts ''
+      results_array << "\nFile index - #{index + 1}\nFile title - #{data.at_css('h2').content}\nFile info - #{data.at_css('div.file-info').content.strip}\n"
+      results_array << "\n"
     end
-  end
-
-  def search_check(usr_input)
-    usr_input.match(/0-9a-zA-Z/)
+    results_array
   end
 
   def windows?
