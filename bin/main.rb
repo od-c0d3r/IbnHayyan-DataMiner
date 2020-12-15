@@ -1,4 +1,4 @@
-require './lib/search'
+require_relative '../lib/search'
 
 # welcome screen
 puts "
@@ -47,7 +47,7 @@ while user_input == 'search'
   puts "Enter file index to open in your defualt browser \nOr tpye 'search' for new query : "
   user_input = gets.chomp.strip
 
-  until (user_input.to_i.positive? && user_input.to_i < 21) || user_input == 'search'
+  until (user_input.to_i.positive? && user_input.to_i < 21) || user_input == 'search' || user_input == 'exit'
     puts "Invalid:> Enter file index to open in your defualt browser \nOr tpye 'search' for new query : "
     user_input = gets.chomp.strip
   end
@@ -61,7 +61,7 @@ while user_input == 'search'
     puts "Enter file index to open in your defualt browser \nOr tpye 'search' for new query : "
     user_input = gets.chomp.strip
 
-    until (user_input.to_i.positive? && user_input.to_i < 21) || user_input == 'search'
+    until (user_input.to_i.positive? && user_input.to_i < 21) || user_input == 'search' || user_input == 'exit'
       puts "Invalid:> Enter file index to open in your defualt browser \nOr tpye 'search' for new query : "
       user_input = gets.chomp.strip
     end

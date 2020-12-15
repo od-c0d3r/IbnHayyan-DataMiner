@@ -1,10 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Hit That ⭐️ if you like this project ! <br>
+Hit That ⭐️ if you like it ! <br>
 
-# 💎Ruby Capstone Project <br>⚒ Ibn Hayyan Data Miner 
+# 💎Ruby Capstone Project <br>⚒ Ibn Hayyan Data Miner
 
- _A web data mining tool for pdf files extension crafted with Nokogiri (鋸) RubyGem and Ruby._
+ _A web data mining tool for seaching and extracting pdf files from [PDFdrive.com](www.pdfdrive.com) <br>Crafted with [Nokogiri](https://nokogiri.org/) (鋸) RubyGem and Ruby._
 
 <img src="screenshot.gif" align="right" width="40%">
 
@@ -25,24 +25,37 @@ Hit That ⭐️ if you like this project ! <br>
 1. [Rubocop](https://rubocop.org/) - _Ruby gem as a Ruby Linter_
 1. [Google DevTools](https://developers.google.com/) - _Debugging tool_
 
-## Getting Started
+## How to use it
+Open the Live code link or follow `Development` section for acquiring a local copy of the App, made for you.
+
+1. Once you are in the repository folder run `ruby ./bin/main.rb`
+1. Read the `Terms of use` then hit `Enter↲`
+1. After `Search for : ` type your query.
+1. Top 20 results for your query will appear.
+1. Enter the file index to open in system default browser or type `search` for new query.
+1. Type `exit` if you wanted to. 
+
+## Development
 
 Follow these steps to get a local copy up and running :
 
 1. Install [`git`](https://git-scm.com/) on your local machine.
 1. On terminal Type `git clone https://github.com/od-c0d3r/Ibn-Hayyan-Data-Miner`
 1. On terminal Type `cd Ibn-Hayyan-Data-Miner`
-1. Make sure you have [Ruby](https://www.ruby-lang.org/en/) Run-time installed
-1. You can escape `6` and `7` by typing `bundle install`
+1. Make sure you have [Ruby](https://www.ruby-lang.org/en/) Run-time installed.
+1. You can escape steps `6` and `7` by typing `bundle install`
 1. Install [`Nokogiri`](https://nokogiri.org/) gem by `gem intsall nokogiri` 
 1. Install [`RSpec`](https://rspec.info/) gem by `gem install rspec` 
 1. Finialy Run `ruby ./bin/main.rb` 
+
+For testing :
+- Run RSpec tests in terminal with `rspec` in the repository root.
 
 ## Show your support 🤙
 
 - Give a ⭐️ if you like this project! OR<br>
 Even better, contribute in [issues](./issures) by suggest an improvment or locate a 🐞!<br>
-And give it a try by submiting a `Pull request` so we can discuss the changes !<br>
+And give it a try by submiting a [pull requst](./pulls) so we can discuss the changes !<br>
 
 ## Acknowledgments 📜
 
