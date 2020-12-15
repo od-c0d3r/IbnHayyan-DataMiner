@@ -33,7 +33,7 @@ Follow these steps to get a local copy up and running :
 1. On terminal Type `git clone https://github.com/od-c0d3r/Ibn-Hayyan-Data-Miner`
 1. On terminal Type `cd Ibn-Hayyan-Data-Miner`
 1. Make sure you have [Ruby](https://www.ruby-lang.org/en/) Run-time installed
-1. You can escape `5` and `6` by typing `bundle install`
+1. You can escape `6` and `7` by typing `bundle install`
 1. Install [`Nokogiri`](https://nokogiri.org/) gem by `gem intsall nokogiri` 
 1. Install [`RSpec`](https://rspec.info/) gem by `gem install rspec` 
 1. Finialy Run `ruby ./bin/main.rb` 
