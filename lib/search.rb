@@ -24,7 +24,8 @@ class Search
       pdf_link = @repository[0].match(%r{\A(https?://)?([\w\d]+)\.([\w\d.]+)}).to_s + data.at_css('a')['href']
       @results_links << pdf_link.to_s
       printable = "File index - #{index + 1}\nFile title - #{data.at_css('h2').content}\n" \
-                  "File info - #{data.at_css('div.file-info').content.strip}"
+                  "File info - #{data.at_css('div.file-info').content.strip}\n" \
+                  "File link - #{pdf_link}"
       results_array << printable
       results_array << "\n"
     end
