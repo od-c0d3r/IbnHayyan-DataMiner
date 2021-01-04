@@ -2,9 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.4.4)
-    mini_portile2 (2.4.0)
-    nokogiri (1.10.10-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
+    mini_portile2 (2.5.0)
+    nokogiri (1.11.0)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.0-x64-mingw32)
+      racc (~> 1.4)
+    racc (1.5.2)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -20,6 +24,7 @@ GEM
     rspec-support (3.10.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
